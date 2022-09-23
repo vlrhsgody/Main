@@ -45,3 +45,56 @@ cplusplus.com에 보면 printf에 이런 비슷한 예제가 나오는데 자릿
 삽질을 치우고 다시 간단한 코드로 이렇게 만들었다.	
 첫번째 아이디어도 물론 좋겠지만 위 아이디어가 더 좋은 것 같다.      	
 나중에 첫번쨰 아이디어로 코드 완성할 예정이다.      	
+
+1038번
+scanf과정에서 계속 예외 처리가 안되었다고 애먹었던 문제다.
+코드에 문제가 없는 것 같은데 뭐가 문제일까 정말 많은 고민을 했다.
+#include <stdio.h>    
+
+#include <stdio.h>    
+
+int main() {    
+	int num1=0;    
+	int num2=0;    
+	int res=0;    
+	char oper;     
+
+	scanf_s("%d %c %d", &num1, &oper, 1, &num2);     
+		
+	switch (oper)         
+	{     	
+	case '+':	    
+		
+
+		printf("%d", num1 + num2);     	
+		break;      
+
+	case '-':     
+		
+
+		printf("%d", num1 - num2);     
+		break;     
+
+	case '*':      
+		
+
+		printf("%d", num1 * num2);     
+		break;     
+
+	case '/':     
+	
+		if (num2 == 0) {      
+			printf("0으로 나눌 수 없습니다.");     
+			break;     
+		}     
+		else{      
+			printf("%d", num1 / num2);     
+			break;      
+		}     
+		
+	}      
+
+
+}     
+왜 num1, num2 값이 담기지 않을까 고민을 했다.      
+근데 도저히 모르겠다. 맞는 문제인 것 같은데 왜 안되는지 도저히 모르겠다.      
