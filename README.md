@@ -100,3 +100,47 @@ int main() {
 근데 도저히 모르겠다. 맞는 문제인 것 같은데 왜 안되는지 도저히 모르겠다.    
 문제 해결 : scanf_s 문제다. 무지성으로 scanf_s 범위값 이렇게 하니까 틀린거였다.    
 1을 넣어서 그 버퍼의 크기가 1임을 명시해야 한다.    
+
+1079번    
+이번에는 scanf_s에서 문자열이 받아지지 않는다
+int main() {     
+	char arr[100];     
+	int i = 0;     
+	///if(scanf_s("%s", arr, sizeof(arr))==1); 
+	scanf_s("%s", arr, sizeof(arr));    
+위 코드에 t r e w q 를 넣었더니 다음과 같은 값이 담겼다.     
+왜 각각의 문자가 담기지 않는 것 일까?     
+&arr	0x00affb60 {116 't', 0 '\0', -2 '?', -2 '?', -2 '?', -2 '?', -2 '?', -2 '?', -2 '?', -2 '?', -2 '?', ...}	char[100] *   
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	char arr[100] = "";
+	int i = 0;
+	scanf("%s", arr);
+
+		while (arr[i] != '112') {
+			for (i = 0; i < 100; i++) {
+				if (arr[i] != '\0') {
+
+					printf("%c\n", arr[i]);
+				}
+				else {
+					printf("\n");
+				}
+
+
+			}
+			printf("%c", 113);
+			break;
+
+
+		}
+
+}  
+
+
+	}     
+}     
+
