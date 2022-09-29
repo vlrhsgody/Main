@@ -162,6 +162,69 @@ long long 까지는 들어봤는데 long long int 로 구현하는 사람은 처
 근데 이게 진짜 해결방법인가?     
 이거 말고 다른 방법이 해결방법이 없는가?    
 
+2주차 C로 http 구현하기     
+------------------------------------------
+https://xn--z92bu70c.kr/86
+위 웹사이트를 통해 코드를 작성했다.
+
+
+#include <stdio.h>
+#include <WinSock2.h>
+#include <Windows.h>
+#pragma comment(lib, "ws2_32.lib")
+#define _CRT_SECURE_NO_WARNINGS
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+#define BUFF_SIZE 1024
+
+int main() {
+
+	WSADATA wsa;
+	struct hostent* host;
+	char msg[BUFF_SIZE];
+
+	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
+	{
+		perror("WSAStart Error ");
+		system("pause");
+		return -1;
+	}
+
+	SOCKET sock = socket(PF_INET, SOCK_STREAM, 0);
+	SOCKADDR_IN addr;
+
+	if (sock == INVALID_SOCKET)
+	{
+		perror("Sock Error ");
+		system("pause");
+		return -1;
+	}
+	host = gethostbyname("www.google.co.kr");
+
+	addr.sin_family = AF_INET;
+	addr.sin_port = htons(80);
+	addr.sin_addr.s_addr = inet_addr(inet_ntoa(*(struct in_addr*)*host->h_addr_list));
+
+	if (connect(sock, (SOCKADDR*)&addr, sizeof(addr)) == SOCKET_ERROR)
+	{
+		printf("Not Connect \n");
+		system("pause");
+		return 1;
+	}
+	send(sock, "GET / HTTP/1.1\r1nHost : wwww.google.co.kr\r\n\r\n", strlen("GET / HTTP/1.1\R\nHost : www.google.co.kr\r\n\r\n"), 0);
+	recv(sock, msg, BUFF_SIZE, 0);
+
+	printf("%s \n", msg);
+
+	closesocket(sock);
+	WSACleanup();
+	system("pause");
+
+	return 0;
+}
+왜 안될까요 ㅎㅎ ㅎㅎㅎㅎㅎ.ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ     
+
+
+
 
 
 
