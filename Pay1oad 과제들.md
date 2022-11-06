@@ -332,6 +332,19 @@ gdb를 사용하여 어셈블리어로 표현할 예정이다.
 ![image](https://user-images.githubusercontent.com/106510018/200172191-00085bc2-7893-41d0-b42c-059861d635b6.png)
 
 이렇게 C로 된 구구단을 어셈블리어로 표현할 수 있다.
+다음은 코드다 cat으로 출력했는데 어디갔는지 사라짐;;
+#include <stdio.h>
+
+int a;
+int b;
+
+int main() {
+	for (a = 1; a < 10; a++) {
+		for (b = 1; b < 10; b++) {
+			printf("%d x %d = %d \n", a, b, a * b);
+		}
+	}
+}
 
 
 
