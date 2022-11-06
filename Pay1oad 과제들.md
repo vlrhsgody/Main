@@ -321,6 +321,19 @@ int main(int argc, char *argv[])
 
 
 
+3주차 어셈블리어 구구단
+------------------------
+
+다들 흔히 있는 VMware에 들어가서
+vim으로 C로 만든 구구단을 만든 후
+gdb를 사용하여 어셈블리어로 표현할 예정이다.
+![image](https://user-images.githubusercontent.com/106510018/200172182-81efcf7b-ce9a-41ce-9b30-dd9d5140969b.png)
+
+![image](https://user-images.githubusercontent.com/106510018/200172191-00085bc2-7893-41d0-b42c-059861d635b6.png)
+
+이렇게 C로 된 구구단을 어셈블리어로 표현할 수 있다.
+
+
 
 
 
