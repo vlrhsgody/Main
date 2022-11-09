@@ -354,6 +354,9 @@ int main() {
 
 https://ethan-ncs.tistory.com/8
 위 티스토리에 있는 핸드레이를 따라 해봤다. 도움이 많이 되는 것 같다.
+![image](https://user-images.githubusercontent.com/106510018/200726800-52478e7c-db5e-4e3f-843b-0d7e87fcd8c6.png)
+![image](https://user-images.githubusercontent.com/106510018/200726844-fee4ecc5-56dd-41a0-93ca-8d8c46ef6059.png)
+
 
 
 
